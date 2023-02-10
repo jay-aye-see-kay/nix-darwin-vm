@@ -23,10 +23,8 @@
       system = "aarch64-linux";
       modules = [
         self.nixosModules.base
-        self.nixosModules.vm
-        {
-          virtualisation.vmVariant.virtualisation.host.pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        }
+        # self.nixosModules.vm
+        { virtualisation.vmVariant.virtualisation.host.pkgs = nixpkgs.legacyPackages.aarch64-darwin; }
       ];
     };
     packages.aarch64-darwin.darwinVM = self.nixosConfigurations.darwinVM.config.system.build.vm;
